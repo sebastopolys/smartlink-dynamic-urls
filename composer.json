@@ -5,7 +5,7 @@
     "license": "gnu",
     "autoload": {
         "psr-4": {
-            "Smrtdu\\SmartlinkDinamicUrls\\": "src/"
+            "Smrtdu\\": "src/"
         }
     },
     "authors": [

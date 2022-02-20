@@ -5,9 +5,9 @@
  * @package           Smartlink_Du
  * Plugin Name:       SmartLink Dynamic URLs
  * Plugin URI:        http://smartlinkdu.com/
- * Description:       Insert up to 5 URLs to a single link and change URL of link randomly each time page is loaded. Select URL to use in link depending on Geolocalization of user. Set Target_Blank and nofollow attributes to each URL
+ * Description:       A new concept of link
  * Name: 			  Silence Dog 
- * Version:           1.0.9
+ * Version:           1.1.0
  * Author:            Sebastopolys
  * Author URI:        https://smartlinkdu.com/
  * License:           GPL-2.0+
@@ -25,4 +25,14 @@ if(!defined('ABSPATH')){die('-1');}
 		$run_front=new smartlink_du_front();
 		$run_front->smrtdu_fstart();
 	}
-smartlink_du_start();
+//smartlink_du_start();
+require 'vendor/autoload.php';
+use Smrtdu\Init\pluginisActive;
+use Smrtdu\Init\initializeDefault;
+
+if(is_admin()):
+	new pluginisActive(__FILE__);
+	$tee = new initializeDefault();
+	$tee->test();
+endif;
+		
